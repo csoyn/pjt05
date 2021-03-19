@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>상세 페이지</h1>
+<p> {{ movie.title }} </p>
+<p> {{ movie.overview }} </p>
+<img src="{{ movie.poster_path }}" alt="movie image">
+
+<a href="{% url 'movies:index' %}">뒤로 가기</a>
+<a href="{% url 'movies:update' movie.pk %}">수정</a>
+<a href="{% url 'movies:delete' movie.pk %}">삭제</a>
+
+{% endblock content %}
+
